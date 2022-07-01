@@ -1,4 +1,4 @@
-# Carrinho de Compras BB Let's-Code
+#  BB Shop
 
 Este projeto é referente ao projeto final no segundo módulo da Let's Code, segue a descrição do projeto:
 
