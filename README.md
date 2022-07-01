@@ -19,7 +19,7 @@ Funcionalidades:
     Apenas para alguns produtos prever a cobrança de frete (pode ser valor fixo ou porcentagem).
     Criar classes de repository para manipulação e armazenamento dos dados (CRUD).
 
-** Não é necessario criar entrada de dados e menu para a aplicaçao (Scanner). **
+**Não é necessário criar entrada de dados e menu para a aplicação (Scanner).**
 
 Conceitos a serem aplicados:
 
@@ -36,8 +36,7 @@ Conceitos extras:
 
 Fazer um pequeno relatório explicando como foi modelada a arquitetura, a motivação e onde foi aplicado o conceito de SOLID / Design Patterns.
 
-
-## Integrantes do grupo: 
+## Integrantes do grupo
 
 Gesiel dos Santos Freitas <br/>
 Igor Franca Gama <br/>
