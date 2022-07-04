@@ -1,9 +1,5 @@
 package br.shop.bb.repository;
 
-
-
-import java.util.List;
-
 import br.shop.bb.model.BaseModel;
 public interface BaseRepository<T extends BaseModel<ID>, ID> {
 
@@ -16,7 +12,7 @@ public interface BaseRepository<T extends BaseModel<ID>, ID> {
     ID criarId();
     void atualizar(T entity);
     T getById(ID id);
-    List<T> listarTodos();
+    void listarTodos();
     void excluir(T entity);
 
 }
