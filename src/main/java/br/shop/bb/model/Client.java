@@ -2,7 +2,11 @@ package br.shop.bb.model;
 
 import java.util.HashSet;
 
+import br.shop.bb.annotations.ID;
+
 public class Client {
+    @ID
+    private int idClient;
     private Person person;
     private HashSet<Cards> cards;
 
