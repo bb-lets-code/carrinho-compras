@@ -12,6 +12,11 @@ public class MemoryPurchaseRepository implements BaseRepository<Purchase, Intege
 
     @Override
     public void persistir(Purchase entity) {
+        int id= entity.getId();
+        if(id == 0) {
+            id = purchaseList.size() + 1;
+            entity.setId(id);
+        }
         purchaseList.add(entity);
     }
 
