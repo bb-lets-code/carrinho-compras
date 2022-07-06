@@ -6,25 +6,26 @@ import br.shop.bb.model.Product;
 import java.math.BigDecimal;
 import java.math.MathContext;
 
-public class CalculateFee implements Calculate {
-    static CalculateFee instance;
+public class CalculateSale implements Calculate {
 
-    public static CalculateFee getInstance() {
+    static CalculateSale instance;
+
+    public static CalculateSale getInstance() {
         if(instance == null){
-            instance = new CalculateFee();
+            instance = new CalculateSale();
         }
         return instance;
     }
 
-    private CalculateFee(){}
+    private CalculateSale(){}
     @Override
-    public Double calculate(Product product){
+    public Double calculate(Product product) {
         BigDecimal fee = new BigDecimal(0);
 
         fee = fee.add(
                 BigDecimal.valueOf(
                         product.getPrice() *
-                                product.getTypeProduct().getFee()
+                                product.getTypeProduct().getSale()
                 )
         );
         MathContext mathContext = new MathContext(2);
