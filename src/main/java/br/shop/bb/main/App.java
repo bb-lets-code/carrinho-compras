@@ -19,7 +19,7 @@ public class App {
 
         System.out.println(cart.getTotal());
 
-        for (Map.Entry<Product,Integer> value : cart.getProducts().entrySet()) {
+        for (Map.Entry<Product, Integer> value : cart.getProducts().entrySet()) {
             System.out.println(value.getKey().getName() + " - " + value.getValue());
         }
     }

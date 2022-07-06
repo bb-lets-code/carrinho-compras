@@ -4,9 +4,6 @@ import br.shop.bb.annotations.ID;
 import br.shop.bb.enums.TypeProduct;
 //Product {idProduct, name, description, price, typeProduct(class, enum){......,...., etc}}
 public class Product extends BaseModel<Integer> {
-
-    
-    
     @ID
     private int idProduct;
     private String name;

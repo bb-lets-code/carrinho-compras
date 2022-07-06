@@ -2,7 +2,11 @@ package br.shop.bb.model;
 
 import java.util.HashMap;
 
+import br.shop.bb.annotations.ID;
+
 public class Cart {
+    @ID
+    private int idCart;
     private int idClient;
     private HashMap<Product, Integer> products;
 
@@ -66,7 +70,11 @@ public class Cart {
         this.totalProducts += totalProducts;
     }
 
-    public Double getTotal(){
+    public Double getTotal() {
         return this.fee + this.totalProducts + this.shipping - this.sales;
+    }
+
+    public int getIdCart() {
+        return idCart;
     }
 }
