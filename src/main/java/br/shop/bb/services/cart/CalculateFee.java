@@ -1,5 +1,6 @@
 package br.shop.bb.services.cart;
 
+import br.shop.bb.interfaces.CalculateTotal;
 import br.shop.bb.model.Product;
 
 import java.util.HashMap;
@@ -7,7 +8,10 @@ import java.util.HashMap;
 public class CalculateFee implements CalculateTotal {
     @Override
     public Double calculate(HashMap<Product, Integer> products) {
-        products.forEach((product, integer) -> product.getTypeProduct().getFee());
-        return 0.0;
+        Double total = 0.0;
+        products.forEach((product, quantity) -> {
+            total += product.getPrice() * quantity;
+        });
+        return  total;
     }
 }
