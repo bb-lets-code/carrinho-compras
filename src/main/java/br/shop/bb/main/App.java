@@ -1,26 +1,28 @@
 package br.shop.bb.main;
 
-import java.util.HashMap;
-
 import br.shop.bb.enums.TypeProduct;
+import br.shop.bb.model.Cart;
 import br.shop.bb.model.Client;
 import br.shop.bb.model.Product;
-import br.shop.bb.services.cart.CalculateFee;
+import br.shop.bb.services.cart.AddProduct;
+
+import java.util.Map;
 
 public class App {
     public static void main(String[] args) {
-        Product product = new Product("Abacaxi", "Fruta", 3.0, TypeProduct.FOOD);
-        Product product2 = new Product("Abacaxi", "Fruta", 3.0, TypeProduct.CLOTHES);
-        Product product3 = new Product("Abacaxi", "Fruta", 3.0, TypeProduct.FOOD);
+        Product product = new Product("Abacaxi", "Fruta", 10.0, TypeProduct.FOOD);
         Client client = new Client();
 
-        HashMap<Product, Integer> products = new HashMap<>();
-        // products.put(product, 2);
-        products.put(product2, 1);
-        // products.put(product3, 1);
+        Cart cart = new Cart();
+        AddProduct addProduct = new AddProduct();
 
-        CalculateFee calculateFee = new CalculateFee();
-        Double fee = calculateFee.calculate(products);
-        System.out.println(fee);
+        addProduct.addProducts(cart, product);
+        addProduct.addProducts(cart, product);
+
+        System.out.println(cart.getTotal());
+
+        for (Map.Entry<Product, Integer> value : cart.getProducts().entrySet()) {
+            System.out.println(value.getKey().getName() + " - " + value.getValue());
+        }
     }
 }
