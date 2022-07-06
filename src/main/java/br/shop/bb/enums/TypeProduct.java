@@ -1,26 +1,34 @@
 package br.shop.bb.enums;
 
-import java.math.BigDecimal;
+
 
 public enum TypeProduct {
-    FOOD(0.1, 0.1),
-    DRINK(0.2, 0.0),
-    CLOTHES(0.3, 0.6),
-    ACCESSORIES(0.4, 0.5),
-    OTHER(0.5, 0.0);
+    FOOD(0.1, 0.1, 0.1),
+    DRINK(0.2,0.2, 0.2),
 
-    double discount;
-    double fee;
+    CLOTHES(0.3,0.3, 0.3),
+    ACCESSORIES(0.4,0.4, 0.4),
+    OTHER(0.0,0.0,0.0);
 
-    TypeProduct(double discount, double fee){
-        this.discount = discount;
+    private final Double fee;
+    private final Double frete;
+    private final Double sale;
+    private TypeProduct(Double fee, Double frete, Double sale){
         this.fee = fee;
-    }
-    public double getDiscount() {
-        return discount;
+        this.frete = frete;
+        this.sale = sale;
     }
 
-    public double getFee() {
+    public Double getFee(){
         return fee;
     }
+
+    public Double getFrete(){
+        return frete;
+    }
+
+    public Double getSale(){
+        return sale;
+    }
+
 }
