@@ -14,8 +14,10 @@ public class App {
         Client client = new Client();
 
         Cart cart = new Cart();
-        AddProduct.addProducts(cart, product);
-        AddProduct.addProducts(cart, product);
+        AddProduct addProduct = new AddProduct();
+
+        addProduct.addProducts(cart, product);
+        addProduct.addProducts(cart, product);
 
         System.out.println(cart.getTotal());
 
