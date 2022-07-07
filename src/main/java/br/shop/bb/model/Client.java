@@ -8,13 +8,13 @@ public class Client extends BaseModel<Integer> {
     @ID
     private int idClient;
     private Person person;
-    private HashSet<Cards> cards;
+    private HashSet<Card> cards;
 
-    public HashSet<Cards> getCards() {
+    public HashSet<Card> getCards() {
         return cards;
     }
 
-    public void setCards(Cards cards) {
+    public void setCards(Card cards) {
         this.cards.add(cards);
     }
 
