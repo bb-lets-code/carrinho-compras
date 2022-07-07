@@ -24,6 +24,7 @@ public class App {
         RemoveProduct removeProduct = new RemoveProduct();
         
         removeProduct.removeProductCart(cart, product1);
+        viewCart.printCart(cart);
 
     }
 }
