@@ -16,4 +16,6 @@ public abstract class Person {
     public void setAddress(Address address){
         this.address.add(address);
     }
+   
+    public abstract String getID();
 }

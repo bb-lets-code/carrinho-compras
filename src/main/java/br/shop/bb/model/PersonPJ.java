@@ -9,4 +9,7 @@ public class PersonPJ extends Person {
     public String getCNPJ() {
         return this.cnpj;
     }
+    public String getID(){
+        return cnpj;
+    }
 }

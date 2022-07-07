@@ -10,5 +10,7 @@ public class PersonPF extends Person {
     public String getCpf() {
         return cpf;
     }
-    
+    public String getID(){
+        return cpf;
+    }
 } 
