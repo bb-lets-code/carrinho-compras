@@ -11,7 +11,7 @@ public class MemoryPurchaseRepository implements BaseRepository<Purchase, Intege
     
 
     @Override
-    public void persistir(Purchase entity) {
+    public void persist(Purchase entity) {
         int id= entity.getId();
         if(id == 0) {
             id = purchaseList.size() + 1;
@@ -21,12 +21,12 @@ public class MemoryPurchaseRepository implements BaseRepository<Purchase, Intege
     }
 
     @Override
-    public Integer criarId() {
+    public Integer createID() {
         return purchaseList.size();
     }
 
     @Override
-    public void atualizar(Purchase entity) {
+    public void update(Purchase entity) {
         if(purchaseList.contains(entity)){
             purchaseList.set(purchaseList.indexOf(entity), entity);
         }        
@@ -38,12 +38,12 @@ public class MemoryPurchaseRepository implements BaseRepository<Purchase, Intege
     }
 
     @Override
-    public void listarTodos() {
+    public void findAll() {
         purchaseList.stream().forEach(System.out::println);
     }
 
     @Override
-    public void excluir(Purchase entity) {
+    public void delete(Purchase entity) {
         if(purchaseList.contains(entity)){
             purchaseList.remove(entity);
         }
