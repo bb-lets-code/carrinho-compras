@@ -8,8 +8,6 @@ import br.shop.bb.model.Purchase;
 public class MemoryPurchaseRepository implements BaseRepository<Purchase, Integer> {
     List<Purchase> purchaseList = new ArrayList<Purchase>();
 
-    
-
     @Override
     public void persistir(Purchase entity) {
         int id= entity.getId();
@@ -47,7 +45,6 @@ public class MemoryPurchaseRepository implements BaseRepository<Purchase, Intege
         if(purchaseList.contains(entity)){
             purchaseList.remove(entity);
         }
-        
     }
 
 
