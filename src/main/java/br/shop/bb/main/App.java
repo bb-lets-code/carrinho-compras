@@ -2,14 +2,10 @@ package br.shop.bb.main;
 
 import br.shop.bb.enums.TypeProduct;
 import br.shop.bb.model.Cart;
-import br.shop.bb.model.Client;
-import br.shop.bb.model.Person;
-import br.shop.bb.model.PersonPF;
 import br.shop.bb.model.Product;
 import br.shop.bb.services.cart.AddProduct;
-import br.shop.bb.services.cart.ViewCart;
 import br.shop.bb.services.cart.RemoveProduct;
-import br.shop.bb.services.singup.SingUp;
+import br.shop.bb.services.cart.ViewCart;
 
 public class App {
     public static void main(String[] args) {
