@@ -2,7 +2,6 @@ package br.shop.bb.services.cart;
 
 import br.shop.bb.model.Cart;
 import br.shop.bb.model.Product;
-import br.shop.bb.services.cart.calculate.TotalCart;
 import br.shop.bb.services.cart.calculate.recalculateEvent.CalculateEventManager;
 import br.shop.bb.services.cart.calculate.recalculateEvent.listeners.RecalculateListener;
 

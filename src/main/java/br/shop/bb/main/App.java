@@ -6,16 +6,12 @@ import br.shop.bb.model.Client;
 import br.shop.bb.model.Product;
 import br.shop.bb.services.cart.AddProduct;
 import br.shop.bb.services.cart.RemoveProduct;
-import br.shop.bb.services.cart.calculate.recalculateEvent.listeners.RecalculateListener;
-
 import java.util.Map;
 
 public class App {
     public static void main(String[] args) {
         Product product = new Product("Abacaxi", "Fruta", 10.0, TypeProduct.FOOD);
         Product product1 = new Product("Blusinha", "Fashion", 50.0, TypeProduct.CLOTHES);
-        Client client = new Client();
-
         Cart cart = new Cart();
         AddProduct addProduct = new AddProduct();
         
