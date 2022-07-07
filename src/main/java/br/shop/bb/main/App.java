@@ -5,10 +5,8 @@ import br.shop.bb.model.Cart;
 import br.shop.bb.model.Client;
 import br.shop.bb.model.Product;
 import br.shop.bb.services.cart.AddProduct;
-import br.shop.bb.services.cart.ListProductsCart;
+import br.shop.bb.services.cart.ViewCart;
 import br.shop.bb.services.cart.RemoveProduct;
-
-import java.util.Map;
 
 public class App {
     public static void main(String[] args) {
@@ -18,21 +16,16 @@ public class App {
 
         Cart cart = new Cart();
         AddProduct addProduct = new AddProduct();
-        ListProductsCart listProductsCart = new ListProductsCart();
+        ViewCart viewCart = new ViewCart();
 
         addProduct.addProducts(cart, product);
         addProduct.addProducts(cart, product);
         addProduct.addProducts(cart, product1);
 
-        System.out.println(cart.getTotal());
-
-        listProductsCart.listProductsCart(cart);
+        viewCart.printCart(cart);
 
         RemoveProduct removeProduct = new RemoveProduct();
         removeProduct.removeProductCart(cart, product1);
 
-        System.out.println(cart.getTotal());
-
-        listProductsCart.listProductsCart(cart);
     }
 }
