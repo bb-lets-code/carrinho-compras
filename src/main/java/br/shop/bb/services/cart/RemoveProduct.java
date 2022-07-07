@@ -18,10 +18,10 @@ public class RemoveProduct {
     public void removeProductCart(Cart cart, Product product){
         if(cart.getProducts().containsKey(product)){
             cart.getProducts().remove(product);
+            product.setPrice(product.getPrice() * -1.0);
+            calculateEventManager.notify("calculateCartTotal",cart, product);
         } else {
             System.out.println("Não existe esse produto no carrinho");
         }
-        product.setPrice(product.getPrice() * -1.0);
-        calculateEventManager.notify("calculateCartTotal",cart, product);
     }
 }
