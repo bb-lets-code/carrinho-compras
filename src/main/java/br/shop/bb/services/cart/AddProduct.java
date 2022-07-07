@@ -2,8 +2,8 @@ package br.shop.bb.services.cart;
 
 import br.shop.bb.model.Cart;
 import br.shop.bb.model.Product;
-import br.shop.bb.services.cart.calculate.CalculateEventManager;
 import br.shop.bb.services.cart.calculate.TotalCart;
+import br.shop.bb.services.cart.calculate.recalculateEvent.CalculateEventManager;
 
 public class AddProduct {
     public CalculateEventManager calculateEventManager;

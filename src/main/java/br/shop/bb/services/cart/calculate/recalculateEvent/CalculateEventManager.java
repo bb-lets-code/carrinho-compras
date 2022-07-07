@@ -1,4 +1,4 @@
-package br.shop.bb.services.cart.calculate;
+package br.shop.bb.services.cart.calculate.recalculateEvent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ public class CalculateEventManager {
     public void notify(String eventType, Cart cart, Product product) {
         List<EventListener> users = listeners.get(eventType);
         for (EventListener listener : users) {
-            listener.update(eventType, cart, product);
+            listener.recalculate(eventType, cart, product);
         }
     }
     
