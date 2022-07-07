@@ -14,6 +14,5 @@ public class CalculateTotal {
         cart.setFee(fee);
         cart.setSales(sale);
         cart.setShipping(shipping);
-        product.setTotal(price + fee + shipping - sale);
     }
 }
