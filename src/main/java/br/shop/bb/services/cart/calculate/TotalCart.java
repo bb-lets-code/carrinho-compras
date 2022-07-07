@@ -1,9 +1,9 @@
-package br.shop.bb.services.cart;
+package br.shop.bb.services.cart.calculate;
 
 import br.shop.bb.model.Cart;
 import br.shop.bb.model.Product;
 
-public class CalculateTotal {
+public class TotalCart {
     public void calculate(Cart cart, Product product) {
         double price = product.getPrice();
         double fee = CalculateFee.getInstance().calculate(product);
