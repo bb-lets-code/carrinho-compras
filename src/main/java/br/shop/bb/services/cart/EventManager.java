@@ -25,7 +25,7 @@ public class EventManager {
 
     public void notify(String eventType, Cart cart, Product product) {
         for(EventListener listener : listeners.values()) {
-            listener.update(cart,product);
+            listener.update(eventType,cart,product);
         }
         
 
