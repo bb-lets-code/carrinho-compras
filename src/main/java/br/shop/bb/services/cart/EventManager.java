@@ -1,7 +1,6 @@
 package br.shop.bb.services.cart;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import br.shop.bb.interfaces.EventListener;
@@ -21,7 +20,7 @@ public class EventManager {
 
     public void unsubscribe(String eventType, EventListener listener) {
         
-        listeners.remove(listener);
+        listeners.remove(eventType,listener);
     }
 
     public void notify(String eventType, Cart cart, Product product) {
