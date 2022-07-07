@@ -5,6 +5,7 @@ import br.shop.bb.model.Cart;
 import br.shop.bb.model.Client;
 import br.shop.bb.model.Product;
 import br.shop.bb.services.cart.AddProduct;
+import br.shop.bb.services.cart.ListProductsCart;
 import br.shop.bb.services.cart.RemoveProduct;
 
 import java.util.Map;
@@ -17,27 +18,21 @@ public class App {
 
         Cart cart = new Cart();
         AddProduct addProduct = new AddProduct();
+        ListProductsCart listProductsCart = new ListProductsCart();
 
         addProduct.addProducts(cart, product);
         addProduct.addProducts(cart, product);
         addProduct.addProducts(cart, product1);
 
         System.out.println(cart.getTotal());
-        System.out.println("------");
 
-        for (Map.Entry<Product, Integer> value : cart.getProducts().entrySet()) {
-            System.out.println(value.getKey().getName() + " - " + value.getValue());
-        }
-
-        System.out.println("----------");
+        listProductsCart.listProductsCart(cart);
 
         RemoveProduct removeProduct = new RemoveProduct();
         removeProduct.removeProductCart(cart, product1);
 
         System.out.println(cart.getTotal());
 
-        for (Map.Entry<Product, Integer> value : cart.getProducts().entrySet()) {
-            System.out.println(value.getKey().getName() + " - " + value.getValue());
-        }
+        listProductsCart.listProductsCart(cart);
     }
 }
