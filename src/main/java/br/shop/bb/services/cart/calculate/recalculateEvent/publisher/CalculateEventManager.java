@@ -1,4 +1,4 @@
-package br.shop.bb.services.cart.calculate.recalculateEvent;
+package br.shop.bb.services.cart.calculate.recalculateEvent.publisher;
 
 import java.util.ArrayList;
 import java.util.HashMap;
