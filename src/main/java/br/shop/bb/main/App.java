@@ -3,9 +3,13 @@ package br.shop.bb.main;
 import br.shop.bb.enums.TypeProduct;
 import br.shop.bb.model.Cart;
 import br.shop.bb.model.Client;
+import br.shop.bb.model.Person;
+import br.shop.bb.model.PersonPF;
 import br.shop.bb.model.Product;
 import br.shop.bb.services.cart.AddProduct;
 import br.shop.bb.services.cart.RemoveProduct;
+import br.shop.bb.services.singup.SingUp;
+
 import java.util.Map;
 
 public class App {
@@ -42,5 +46,25 @@ public class App {
         }
         System.out.println("----------");
         System.out.println("Total: " + cart.getTotal());
+
+        PersonPF clientePF = new PersonPF();
+        clientePF.setCpf("123456789");
+        
+        Client cliente = new Client();
+        cliente.setPerson(clientePF);
+
+
+        PersonPF clientePF2 = new PersonPF();
+        clientePF2.setCpf("9874564123");
+        
+        Client cliente2 = new Client();
+        cliente2.setPerson(clientePF2);
+
+        SingUp singUp = new SingUp();
+        singUp.createClient(cliente);
+        singUp.createClient(cliente2);
+        singUp.listaTodos();
+
+
     }
 }
