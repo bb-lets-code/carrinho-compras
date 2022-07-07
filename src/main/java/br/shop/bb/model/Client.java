@@ -8,7 +8,9 @@ public class Client extends BaseModel<Integer> {
     @ID
     private int idClient;
     private Person person;
+    
     private HashSet<Cards> cards;
+
 
     public HashSet<Cards> getCards() {
         return cards;
@@ -24,5 +26,18 @@ public class Client extends BaseModel<Integer> {
 
     public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public int getId() {
+        return this.idClient;
+    }
+
+    public void setIdClient(Integer idClient) {
+        this.idClient = idClient;
+    }
+
+    @Override
+    public String toString() {
+        return "Client [cards=" + cards + ", idClient=" + idClient + ", person=" + person + "]";
     }
 }
