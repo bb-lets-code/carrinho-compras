@@ -1,4 +1,4 @@
-package br.shop.bb.services.cart;
+package br.shop.bb.services.calculate;
 
 import br.shop.bb.model.Cart;
 import br.shop.bb.model.Product;
