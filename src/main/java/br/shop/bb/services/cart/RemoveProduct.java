@@ -2,7 +2,7 @@ package br.shop.bb.services.cart;
 
 import br.shop.bb.model.Cart;
 import br.shop.bb.model.Product;
-import br.shop.bb.services.calculate.CalculateTotal;
+import br.shop.bb.services.cart.calculate.CalculateTotal;
 
 public class RemoveProduct {
     public void removeProductCart(Cart cart, Product product){
