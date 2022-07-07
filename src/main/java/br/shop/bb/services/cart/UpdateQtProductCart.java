@@ -2,8 +2,16 @@ package br.shop.bb.services.cart;
 
 import br.shop.bb.model.Cart;
 import br.shop.bb.model.Product;
+import br.shop.bb.services.cart.calculate.recalculateEvent.CalculateEventManager;
+import br.shop.bb.services.cart.calculate.recalculateEvent.listeners.RecalculateListener;
 
 public class UpdateQtProductCart {
+    private CalculateEventManager calculateEventManager;
+
+    public UpdateQtProductCart() {
+        this.calculateEventManager = new CalculateEventManager("calculateCartTotal");
+        this.calculateEventManager.subscribe("calculateCartTotal", new RecalculateListener());
+    }
     public void updateProductCart(Cart cart, Product product, int quantity){
         if(cart.getProducts().containsValue(product)){
             cart.getProducts().replace(product, quantity);
