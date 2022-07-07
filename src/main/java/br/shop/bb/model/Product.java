@@ -13,14 +13,6 @@ public class Product extends BaseModel<Integer> {
     private String description;
     private Double unitaryPrice;
     private TypeProduct typeProduct;
-    private Double total;
-    public Double getTotal() {
-        return total;
-    }
-
-    public void setTotal(Double total) {
-        this.total = total;
-    }
 
     public Product(String name, String description, Double price, TypeProduct typeProduct) {
         this.name = name;
@@ -76,7 +68,6 @@ public class Product extends BaseModel<Integer> {
         s.append("ID: ").append(idProduct).append("; ");
         s.append("Descrição: ").append(description).append("; ");
         s.append("Preço Unitário: R$ ").append(unitaryPrice).append("; ");
-        s.append("Preço Total do Produto: R$ ").append(total);
         s.append(" }");
         return s.toString();
     }
