@@ -13,4 +13,5 @@ public class PersonPF extends Person {
     public String getID(){
         return cpf;
     }
+    public void setID(String id){this.cpf = id;}
 } 

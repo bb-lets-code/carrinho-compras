@@ -12,4 +12,5 @@ public class PersonPJ extends Person {
     public String getID(){
         return cnpj;
     }
+    public void setID(String id){this.cnpj = id;}
 }
