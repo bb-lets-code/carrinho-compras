@@ -10,6 +10,8 @@ import br.shop.bb.model.PersonPF;
 import br.shop.bb.model.Product;
 import br.shop.bb.repository.BaseRepository;
 import br.shop.bb.repository.client.ClientRepositoryFactory;
+import br.shop.bb.repository.client.MemoryClientRepository;
+import br.shop.bb.repository.product.ProductRepositoryFactory;
 import br.shop.bb.services.cart.AddProduct;
 import br.shop.bb.services.cart.RemoveProduct;
 import br.shop.bb.services.cart.ViewCart;
@@ -48,6 +50,16 @@ public class App {
         Set<Client> clients= memoryClientRepository.findAll();
         System.out.println(clients);
         
+        System.out.println("\n\n");
+        System.out.println("Persistindo produto");
+        System.out.println("\n\n");
+        
+        ProductRepositoryFactory factoryBaseProduct = new ProductRepositoryFactory();
+        BaseRepository<Product, Integer> memoryClientRepository1 = factoryBaseProduct.getBaseRepository("MemoryClient");
+        product.setName("Abacaxi 2");
+        memoryClientRepository1.save(product);
+        Set<Product> productSet = memoryClientRepository1.findAll();
+        productSet.stream().forEach(System.out::println);
         
 
     }
