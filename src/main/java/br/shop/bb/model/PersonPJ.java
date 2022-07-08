@@ -9,4 +9,8 @@ public class PersonPJ extends Person {
     public String getCNPJ() {
         return this.cnpj;
     }
+    public String getIdentification(){
+        return cnpj;
+    }
+    public void setIdentification(String id){this.cnpj = id;}
 }

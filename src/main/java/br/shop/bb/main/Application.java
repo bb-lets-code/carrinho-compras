@@ -52,7 +52,7 @@ public class Application {
         System.out.println("Cadastrando cliente: ");
         PersonPF personPF = new PersonPF();
         personPF.setName("João");
-        personPF.setCpf("123456789");
+        personPF.setCpf("12345678910");
 
         Client client = new Client();
         client.setPerson(personPF);
