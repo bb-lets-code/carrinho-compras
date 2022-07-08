@@ -7,7 +7,7 @@ import br.shop.bb.repository.BaseRepository;
 public class ClientRepositoryFactory {
     public BaseRepository<Client, Integer> getBaseRepository(String type) {
         if (type.equals("MemoryClient")) {
-            return new MemoryClientRepository();
+            return MemoryClientRepository.getInstance();
         }
         return null;
     }

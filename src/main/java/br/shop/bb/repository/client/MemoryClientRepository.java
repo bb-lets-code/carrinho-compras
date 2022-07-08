@@ -12,6 +12,15 @@ public class MemoryClientRepository implements BaseRepository<Client, Integer>  
 
 
     Set<Client> clientList = new HashSet<Client>();
+
+    private MemoryClientRepository() {
+
+    }
+
+    public static MemoryClientRepository getInstance() {
+        return new MemoryClientRepository();
+    }
+
     @Override
     public void persist(Client entity) {
         int id = entity.getId();

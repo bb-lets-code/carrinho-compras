@@ -11,6 +11,15 @@ import br.shop.bb.repository.BaseRepository;
 public class MemoryPurchaseRepository implements BaseRepository<Purchase, Integer> {
     List<Purchase> purchaseList = new ArrayList<Purchase>();
 
+
+    private MemoryPurchaseRepository() {
+
+    }
+
+    public static MemoryPurchaseRepository getInstance() {
+        return new MemoryPurchaseRepository();
+    }
+
     @Override
     public void persist(Purchase entity) {
         int id= entity.getId();

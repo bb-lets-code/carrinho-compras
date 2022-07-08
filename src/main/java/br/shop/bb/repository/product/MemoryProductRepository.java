@@ -11,6 +11,16 @@ public class MemoryProductRepository implements BaseRepository<Product, Integer>
 
     Set<Product> productList = new HashSet<Product>();
 
+
+
+    private MemoryProductRepository(){
+
+    }
+
+    public static MemoryProductRepository getInstance(){
+        return new MemoryProductRepository();
+    }
+
     @Override
     public void persist(Product entity) {
        
