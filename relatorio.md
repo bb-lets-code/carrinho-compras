@@ -12,8 +12,8 @@ Para as funcionalidades do carrinho foram utilizados alguns padrões de projeto,
 de cada uma delas.
 
 
-Para a adição de produtos por meio da memória foi modelado o padrão de projeto Factory Method para que o usuário possa ter opção de
-carregar produtos na aplicação de origens diferentes utilizando o arquivo confi.propeties onde a chave "origemDadosProducts" deve preenchida com o tupo de armazenamento que será utilizado pelo software.
+Para a adição de produtos por meio da memória foi modelado o padrão de projeto Factory Method para que o usuário possa ter a opção de
+carregar produtos na aplicação de origens diferentes utilizando o arquivo confi.properties onde a chave "origemDadosProducts" deve ser preenchida com o tipo de armazenamento que será utilizado pelo software.
 
 Foi criado o repository que permite a manipulação dos dados (CRUD) de Client, Product e Purchase na memória.
 
