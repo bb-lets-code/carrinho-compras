@@ -1,6 +1,6 @@
 package br.shop.bb.model;
 
-public class Cards {
+public class Card {
     private String number;
     private String code; 
     private String flag;

@@ -1,3 +1,4 @@
+
 package br.shop.bb.model;
 
 public class PersonPF extends Person {
@@ -14,4 +15,9 @@ public class PersonPF extends Person {
         return cpf;
     }
     public void setID(String id){this.cpf = id;}
+    
+    @Override
+    public String toString() {
+        return "PersonPF [cpf=" + cpf + "]";
+    }
 } 
