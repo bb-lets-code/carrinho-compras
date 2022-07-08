@@ -10,9 +10,9 @@ public class SingUp {
     
     ClientRepositoryFactory factoryBase = new ClientRepositoryFactory();
     public SingUp() {
-        this.memoryClientRepository = factoryBase.getBaseRepository("MemoryClient");
+        this.memoryClientRepository = factoryBase.getBaseRepository();
     }
-    public void createClient(Client client){
+    public void singUp(Client client){
         //TODO: validações em cadeia de responsabilidade
             if(client != null){
                 memoryClientRepository.persist(client);

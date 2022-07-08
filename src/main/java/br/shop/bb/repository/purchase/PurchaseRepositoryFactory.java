@@ -1,14 +1,34 @@
 package br.shop.bb.repository.purchase;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import br.shop.bb.main.App;
 import br.shop.bb.model.Purchase;
 import br.shop.bb.repository.BaseRepository;
 
 public class PurchaseRepositoryFactory {
-    public BaseRepository<Purchase, Integer> getBaseRepository(String dbType) {
-        if (dbType.equals("EM_MEMORIA")) {
+    final Properties prop = new Properties();
+    final String filePath = App.class.getClassLoader().getResource("config.properties").getPath();
+
+    public BaseRepository<Purchase, Integer> getBaseRepository() {
+        getResources();
+
+        if (this.prop.getProperty("origemDadosProducts").equals("EM_MEMORIA")) {
             return MemoryPurchaseRepository.getInstance();
         } else {
             return null;
+        }
+    }
+
+    private void getResources() {
+        
+        try (InputStream stream = new FileInputStream(filePath)) {
+            prop.load(stream);
+        } catch (IOException e) {
+            System.out.println("Erro ao carregar arquivo de configuração");
         }
     }
 }

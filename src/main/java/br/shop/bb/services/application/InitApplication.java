@@ -35,11 +35,11 @@ public class InitApplication {
         System.out.println("Iniciando banco de dados");
         final String dbType = prop.getProperty("origemDadosProducts");
         ClientRepositoryFactory factoryBase = new ClientRepositoryFactory();
-        BaseRepository<Client, Integer> memoryClientRepository = factoryBase.getBaseRepository(dbType);
+        BaseRepository<Client, Integer> memoryClientRepository = factoryBase.getBaseRepository();
         ProductRepositoryFactory factoryBaseProduct = new ProductRepositoryFactory();
-        BaseRepository<Product, Integer> memoryProductRepository = factoryBaseProduct.getBaseRepository(dbType);
+        BaseRepository<Product, Integer> memoryProductRepository = factoryBaseProduct.getBaseRepository();
         PurchaseRepositoryFactory factoryProductPurchase = new PurchaseRepositoryFactory();
-        BaseRepository<Purchase, Integer> memoryPurchaseRepository = factoryProductPurchase.getBaseRepository(dbType);
+        BaseRepository<Purchase, Integer> memoryPurchaseRepository = factoryProductPurchase.getBaseRepository();
 
 
         
