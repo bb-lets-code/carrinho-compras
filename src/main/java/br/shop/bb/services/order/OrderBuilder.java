@@ -1,6 +1,5 @@
 package br.shop.bb.services.order;
 
-import br.shop.bb.enums.PaymentType;
 import br.shop.bb.model.Cart;
 import br.shop.bb.model.Order;
 import br.shop.bb.model.Payment;

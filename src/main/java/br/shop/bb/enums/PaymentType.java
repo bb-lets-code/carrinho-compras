@@ -1,7 +1,5 @@
 package br.shop.bb.enums;
 
-import br.shop.bb.model.CreditCard;
-
 public enum PaymentType {
     CREDITCARD("CreditCard"),
     TICKET("Ticket"),

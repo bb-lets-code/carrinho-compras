@@ -1,7 +1,6 @@
 package br.shop.bb.model;
 
 import br.shop.bb.enums.Installments;
-import br.shop.bb.enums.PaymentType;
 
 public class CreditCard extends Payment{
 
