@@ -10,6 +10,7 @@ import br.shop.bb.model.PersonPF;
 import br.shop.bb.model.Product;
 import br.shop.bb.repository.BaseRepository;
 import br.shop.bb.repository.client.ClientRepositoryFactory;
+import br.shop.bb.repository.product.MemoryProductRepository;
 import br.shop.bb.services.cart.AddProduct;
 import br.shop.bb.services.cart.RemoveProduct;
 import br.shop.bb.services.cart.ViewCart;
@@ -47,6 +48,22 @@ public class App {
         memoryClientRepository.save(client);
         Set<Client> clients= memoryClientRepository.findAll();
         System.out.println(clients);
+        System.out.println("\n\n");
+        System.out.println("Removendo cliente");
+        System.out.println("\n\n");
+        memoryClientRepository.delete(client);
+        clients= memoryClientRepository.findAll();
+        System.out.println(clients);
+        System.out.println("\n\n");
+        System.out.println(" Persistindo product");
+        System.out.println("\n\n");
+        MemoryProductRepository memoryProductRepository = new MemoryProductRepository();
+        memoryProductRepository.saveAll(memoryProductRepository.findAll());
+        System.out.println("Cadastrando produto");
+        System.out.println("\n\n");
+        memoryProductRepository.save(product);
+        Set<Product> products = memoryProductRepository.findAll();
+        System.out.println(products);
         
         
 
