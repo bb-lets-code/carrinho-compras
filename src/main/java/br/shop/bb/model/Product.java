@@ -76,4 +76,8 @@ public class Product extends BaseModel<Integer> {
         s.append(" }");
         return s.toString();
     }
+
+    public int getId() {
+        return this.idProduct;
+    }
 }
