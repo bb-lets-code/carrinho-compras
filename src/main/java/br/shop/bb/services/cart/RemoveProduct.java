@@ -34,6 +34,7 @@ public class RemoveProduct {
             cart.getProducts().get(product); 
             product.setPrice(product.getPrice() * -1.0);
             calculateEventManager.notify("calculateCartTotal",cart, product);
+            product.setPrice(product.getPrice() * -1.0);
         } else {
             System.out.println("Não existe esse produto no carrinho");
         }
