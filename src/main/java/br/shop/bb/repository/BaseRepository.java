@@ -1,6 +1,10 @@
 package br.shop.bb.repository;
 
+import java.util.List;
+import java.util.Set;
+
 import br.shop.bb.model.BaseModel;
+import br.shop.bb.model.Client;
 public interface BaseRepository<T extends BaseModel<ID>, ID> {
 
 
@@ -13,7 +17,7 @@ public interface BaseRepository<T extends BaseModel<ID>, ID> {
     ID createID();
     void update(T entity);
     T getById(ID id);
-    void findAll();
+    Set<T> findAll();
     void delete(T entity);
 
 }
