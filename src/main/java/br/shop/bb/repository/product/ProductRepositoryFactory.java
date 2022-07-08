@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
 
+import br.shop.bb.enums.TypeDatabase;
 import br.shop.bb.enums.TypeProduct;
 import br.shop.bb.main.Application;
 import br.shop.bb.model.Product;
@@ -19,7 +20,7 @@ public class ProductRepositoryFactory {
 
     public BaseRepository<Product, Integer> getBaseRepository() {
         getResources();
-        if (this.prop.getProperty("origemDadosProducts").equals("EM_MEMORIA")) {
+        if (this.prop.getProperty("origemDadosProducts").equals(TypeDatabase.EM_MEMORY.getDatabaseType())) {
             MemoryProductRepository memoryProductRepository = MemoryProductRepository.getInstance();
             Set<Product> productList = initializeDataSet();
             memoryProductRepository.saveAll(productList);

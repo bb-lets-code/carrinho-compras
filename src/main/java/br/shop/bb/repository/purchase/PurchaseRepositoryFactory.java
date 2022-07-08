@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import br.shop.bb.enums.TypeDatabase;
 import br.shop.bb.main.Application;
 import br.shop.bb.model.Purchase;
 import br.shop.bb.repository.BaseRepository;
@@ -16,7 +17,7 @@ public class PurchaseRepositoryFactory {
     public BaseRepository<Purchase, Integer> getBaseRepository() {
         getResources();
 
-        if (this.prop.getProperty("origemDadosProducts").equals("EM_MEMORIA")) {
+        if (this.prop.getProperty("origemDadosProducts").equals(TypeDatabase.EM_MEMORY.getDatabaseType())) {
             return MemoryPurchaseRepository.getInstance();
         } else {
             return null;
