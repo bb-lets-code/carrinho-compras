@@ -6,13 +6,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import br.shop.bb.main.App;
+
+import br.shop.bb.main.Application;
 import br.shop.bb.model.Client;
 import br.shop.bb.repository.BaseRepository;
 
 public class ClientRepositoryFactory {
     final Properties prop = new Properties();
-    final String filePath = App.class.getClassLoader().getResource("config.properties").getPath();
+    final String filePath = Application.class.getClassLoader().getResource("config.properties").getPath();
 
     public BaseRepository<Client, Integer> getBaseRepository() {
         getResources();

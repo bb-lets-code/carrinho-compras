@@ -9,13 +9,13 @@ import java.util.Properties;
 import java.util.Set;
 
 import br.shop.bb.enums.TypeProduct;
-import br.shop.bb.main.App;
+import br.shop.bb.main.Application;
 import br.shop.bb.model.Product;
 import br.shop.bb.repository.BaseRepository;
 
 public class ProductRepositoryFactory {
     final Properties prop = new Properties();
-    final String filePath = App.class.getClassLoader().getResource("config.properties").getPath();
+    final String filePath = Application.class.getClassLoader().getResource("config.properties").getPath();
 
     public BaseRepository<Product, Integer> getBaseRepository() {
         getResources();
@@ -45,7 +45,7 @@ public class ProductRepositoryFactory {
         Set<Product> productList = new HashSet<Product>();
         Product product = new Product("Abacaxi", "Fruta", 10.0, TypeProduct.FOOD);
 
-        
+
         Product product1 = new Product("Blusinha 2", "Fashion", 45.0, TypeProduct.CLOTHES);
         Product product2 = new Product("Blusinha 3", "Fashion", 30.0, TypeProduct.CLOTHES);
         Product product3 = new Product("Blusinha 4", "Fashion", 20.0, TypeProduct.CLOTHES);

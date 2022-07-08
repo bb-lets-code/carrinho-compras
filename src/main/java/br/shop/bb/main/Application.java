@@ -38,7 +38,7 @@ Apenas para alguns produtos prever a cobrança de uma taxa extra a ser adicionad
 Apenas para alguns produtos prever a cobrança de frete (pode ser valor fixo ou porcentagem).
 Criar classes de repository para manipulação e armazenamento dos dados (CRUD).
  */
-public class Aplication {
+public class Application {
     public static void main(String[] args) {
         
         System.out.println("\n\n");

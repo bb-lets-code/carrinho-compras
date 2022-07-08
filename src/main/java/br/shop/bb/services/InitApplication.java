@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import br.shop.bb.main.App;
+
 import br.shop.bb.model.Client;
 import br.shop.bb.model.Product;
 import br.shop.bb.model.Purchase;
