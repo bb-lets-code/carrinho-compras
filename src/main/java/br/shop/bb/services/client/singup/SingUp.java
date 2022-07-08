@@ -1,4 +1,4 @@
-package br.shop.bb.services.singup;
+package br.shop.bb.services.client.singup;
 
 import br.shop.bb.model.Client;
 import br.shop.bb.repository.BaseRepository;
