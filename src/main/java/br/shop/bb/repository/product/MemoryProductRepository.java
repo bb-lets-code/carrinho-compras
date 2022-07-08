@@ -10,11 +10,25 @@ import br.shop.bb.repository.BaseRepository;
 public class MemoryProductRepository implements BaseRepository<Product, Integer>{
 
     Set<Product> productList = new HashSet<Product>();
+    private static MemoryProductRepository instance;
+
+
+    private MemoryProductRepository(){
+
+    }
+
+    public static MemoryProductRepository getInstance(){
+        if(instance == null){
+            instance = new MemoryProductRepository();
+        }
+        return instance;
+
+    }
 
     @Override
     public void persist(Product entity) {
        
-        int id = entity.getId();
+        Integer id = entity.getId();
         if(id == 0) {
             id = productList.size() + 1;
             entity.setId(id);

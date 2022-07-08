@@ -1,5 +1,4 @@
-package br.shop.bb.repository.client;
-
+package br.shop.bb.repository.purchase;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,29 +7,29 @@ import java.util.Properties;
 
 import br.shop.bb.enums.TypeDatabase;
 import br.shop.bb.main.Application;
-import br.shop.bb.model.Client;
+import br.shop.bb.model.Purchase;
 import br.shop.bb.repository.BaseRepository;
 
-public class ClientRepositoryFactory {
+public class PurchaseRepositoryFactory {
     final Properties prop = new Properties();
     final String filePath = Application.class.getClassLoader().getResource("config.properties").getPath();
 
-    public BaseRepository<Client, Integer> getBaseRepository() {
+    public BaseRepository<Purchase, Integer> getBaseRepository() {
         getResources();
+
         if (this.prop.getProperty("origemDadosProducts").equals(TypeDatabase.EM_MEMORY.getDatabaseType())) {
-            return MemoryClientRepository.getInstance();
+            return MemoryPurchaseRepository.getInstance();
+        } else {
+            return null;
         }
-        return null;
     }
 
-    
-    private void getResources(){
-
+    private void getResources() {
+        
         try (InputStream stream = new FileInputStream(filePath)) {
             prop.load(stream);
         } catch (IOException e) {
             System.out.println("Erro ao carregar arquivo de configuração");
         }
     }
-
 }

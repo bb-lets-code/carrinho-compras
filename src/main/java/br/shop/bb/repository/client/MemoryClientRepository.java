@@ -1,8 +1,8 @@
 package br.shop.bb.repository.client;
 
-import java.util.ArrayList;
+
 import java.util.HashSet;
-import java.util.List;
+
 import java.util.Set;
 
 import br.shop.bb.model.Client;
@@ -10,8 +10,20 @@ import br.shop.bb.repository.BaseRepository;
 
 public class MemoryClientRepository implements BaseRepository<Client, Integer>  {
 
-
+    private static MemoryClientRepository instance;
     Set<Client> clientList = new HashSet<Client>();
+
+    private MemoryClientRepository() {
+
+    }
+
+    public static MemoryClientRepository getInstance() {
+        if (instance == null) {
+            instance = new MemoryClientRepository();
+        }
+        return instance;
+    }
+
     @Override
     public void persist(Client entity) {
         int id = entity.getId();

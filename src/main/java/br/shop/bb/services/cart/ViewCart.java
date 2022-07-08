@@ -25,5 +25,6 @@ public class ViewCart {
         System.out.println("Frete: R$" + cart.getShipping());
         System.out.println("Promoção: -R$" + cart.getSales());
         System.out.println("Total do carrinho: R$" + cart.getTotal());
+        System.out.println("======================");
     }
 }

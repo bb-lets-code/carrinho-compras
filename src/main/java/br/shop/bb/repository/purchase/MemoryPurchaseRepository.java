@@ -1,15 +1,27 @@
 package br.shop.bb.repository.purchase;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
-import br.shop.bb.model.Client;
 import br.shop.bb.model.Purchase;
 import br.shop.bb.repository.BaseRepository;
 
 public class MemoryPurchaseRepository implements BaseRepository<Purchase, Integer> {
-    List<Purchase> purchaseList = new ArrayList<Purchase>();
+    
+    private static MemoryPurchaseRepository instance;
+
+    private MemoryPurchaseRepository() {
+        
+
+    }
+
+    public static MemoryPurchaseRepository getInstance() {
+        if (instance == null) {
+            instance = new MemoryPurchaseRepository();
+        }
+        return instance;
+    }
+    Set<Purchase> purchaseList = new HashSet<Purchase>();
 
     @Override
     public void persist(Purchase entity) {
@@ -29,18 +41,24 @@ public class MemoryPurchaseRepository implements BaseRepository<Purchase, Intege
     @Override
     public void update(Purchase entity) {
         if(purchaseList.contains(entity)){
-            purchaseList.set(purchaseList.indexOf(entity), entity);
+            purchaseList.remove(entity);
+            purchaseList.add(entity);
         }        
     }
 
     @Override
     public Purchase getById(Integer id) {
-        return purchaseList.get(id);
+        for(Purchase purchase : purchaseList) {
+            if(purchase.getId() == id) {
+                return purchase;
+            }
+        }
+        return null;
     }
 
     @Override
     public Set<Purchase> findAll() {
-       return null;
+        return purchaseList;
     }
 
     @Override
