@@ -25,8 +25,9 @@ public class ProductRepositoryFactory {
         
         Set<Product> productList = new HashSet<Product>();
         Product product = new Product("Abacaxi", "Fruta", 10.0, TypeProduct.FOOD);
-        Product product1 = new Product("Blusinha", "Fashion", 50.0, TypeProduct.CLOTHES);
-
+        Product product1 = new Product("Blusinha 2", "Fashion", 50.0, TypeProduct.CLOTHES);
+        productList.add(product);
+        productList.add(product1);
         return productList;
     }
 }

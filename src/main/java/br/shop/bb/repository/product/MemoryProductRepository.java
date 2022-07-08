@@ -24,7 +24,7 @@ public class MemoryProductRepository implements BaseRepository<Product, Integer>
     @Override
     public void persist(Product entity) {
        
-        int id = entity.getId();
+        Integer id = entity.getId();
         if(id == 0) {
             id = productList.size() + 1;
             entity.setId(id);

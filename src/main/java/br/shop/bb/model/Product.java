@@ -8,7 +8,7 @@ import java.util.Objects;
 //Product {idProduct, name, description, price, typeProduct(class, enum){......,...., etc}}
 public class Product extends BaseModel<Integer> {
     @ID
-    private Integer idProduct;
+    private int idProduct;
     
 
     private String name;
@@ -23,9 +23,6 @@ public class Product extends BaseModel<Integer> {
         this.typeProduct = typeProduct;
     }
 
-    public Integer getIdProduct() {
-        return idProduct;
-    }
     
     public String getName() {
         return name;
@@ -79,5 +76,9 @@ public class Product extends BaseModel<Integer> {
 
     public int getId() {
         return this.idProduct;
+    }
+
+    public void setId(Integer id) {
+        this.idProduct = id;
     }
 }
