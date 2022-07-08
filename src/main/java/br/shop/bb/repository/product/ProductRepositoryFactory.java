@@ -5,10 +5,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import br.shop.bb.enums.TypeProduct;
-import br.shop.bb.model.Client;
 import br.shop.bb.model.Product;
 import br.shop.bb.repository.BaseRepository;
-import br.shop.bb.repository.client.MemoryClientRepository;
 
 public class ProductRepositoryFactory {
     public BaseRepository<Product, Integer> getBaseRepository(String type) {
@@ -18,6 +16,8 @@ public class ProductRepositoryFactory {
             memoryProductRepository.saveAll(productList);
             return memoryProductRepository;
         }
+
+        
         return null;
     }
 
