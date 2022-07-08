@@ -10,7 +10,7 @@ import br.shop.bb.repository.BaseRepository;
 
 public class MemoryClientRepository implements BaseRepository<Client, Integer>  {
 
-
+    private static MemoryClientRepository instance;
     Set<Client> clientList = new HashSet<Client>();
 
     private MemoryClientRepository() {
@@ -18,7 +18,10 @@ public class MemoryClientRepository implements BaseRepository<Client, Integer>  
     }
 
     public static MemoryClientRepository getInstance() {
-        return new MemoryClientRepository();
+        if (instance == null) {
+            instance = new MemoryClientRepository();
+        }
+        return instance;
     }
 
     @Override

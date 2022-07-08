@@ -4,20 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import br.shop.bb.model.Client;
 import br.shop.bb.model.Purchase;
 import br.shop.bb.repository.BaseRepository;
 
 public class MemoryPurchaseRepository implements BaseRepository<Purchase, Integer> {
     List<Purchase> purchaseList = new ArrayList<Purchase>();
-
+    private static MemoryPurchaseRepository instance;
 
     private MemoryPurchaseRepository() {
+        
 
     }
 
     public static MemoryPurchaseRepository getInstance() {
-        return new MemoryPurchaseRepository();
+        if (instance == null) {
+            instance = new MemoryPurchaseRepository();
+        }
+        return instance;
     }
 
     @Override

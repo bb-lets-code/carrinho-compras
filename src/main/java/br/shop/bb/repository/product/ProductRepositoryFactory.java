@@ -12,7 +12,7 @@ import br.shop.bb.repository.client.MemoryClientRepository;
 
 public class ProductRepositoryFactory {
     public BaseRepository<Product, Integer> getBaseRepository(String type) {
-        if (type.equals("MemoryClient")) {
+        if (type.equals("EM_MEMORIA")) {
             MemoryProductRepository memoryProductRepository = MemoryProductRepository.getInstance();
             Set<Product> productList = initializeDataSet();
             memoryProductRepository.saveAll(productList);

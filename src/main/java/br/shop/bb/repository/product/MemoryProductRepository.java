@@ -10,7 +10,7 @@ import br.shop.bb.repository.BaseRepository;
 public class MemoryProductRepository implements BaseRepository<Product, Integer>{
 
     Set<Product> productList = new HashSet<Product>();
-
+    private static MemoryProductRepository instance;
 
 
     private MemoryProductRepository(){
@@ -18,7 +18,11 @@ public class MemoryProductRepository implements BaseRepository<Product, Integer>
     }
 
     public static MemoryProductRepository getInstance(){
-        return new MemoryProductRepository();
+        if(instance == null){
+            instance = new MemoryProductRepository();
+        }
+        return instance;
+
     }
 
     @Override
