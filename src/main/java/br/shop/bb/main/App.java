@@ -1,5 +1,6 @@
 package br.shop.bb.main;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 import br.shop.bb.enums.TypeProduct;
@@ -7,7 +8,9 @@ import br.shop.bb.model.Cart;
 import br.shop.bb.model.Client;
 import br.shop.bb.model.PersonPF;
 import br.shop.bb.model.Product;
+import br.shop.bb.model.Purchase;
 import br.shop.bb.repository.product.MemoryProductRepository;
+import br.shop.bb.repository.purchase.MemoryPurchaseRepository;
 import br.shop.bb.services.application.InitApplication;
 import br.shop.bb.services.cart.AddProduct;
 import br.shop.bb.services.cart.RemoveProduct;
@@ -54,6 +57,7 @@ public class App {
         // System.out.println("Persistindo produto");
         // System.out.println("\n\n");
         
+
         // ProductRepositoryFactory factoryBaseProduct = new ProductRepositoryFactory();
         // BaseRepository<Product, Integer> memoryClientRepository1 = factoryBaseProduct.getBaseRepository("MemoryClient");
         // product.setName("Abacaxi 2");
@@ -69,5 +73,15 @@ public class App {
 
 
 
+        System.out.println("\n\n");
+        System.out.println(" Persistindo Purchase");
+        System.out.println("\n\n");
+        Purchase purchase = new Purchase();
+        purchase.setOrderDate(LocalDate.now());
+
+        MemoryPurchaseRepository memoryPurchaseRepository = MemoryPurchaseRepository.getInstance();
+        memoryPurchaseRepository.save(purchase);
+        Set<Purchase> purchases = memoryPurchaseRepository.findAll();
+        purchases.stream().forEach(System.out::println);
     }
 }

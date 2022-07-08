@@ -9,6 +9,7 @@ public class Purchase extends BaseModel<Integer> {
     @ID
     private Integer id;
     private LocalDate orderDate;
+    
 
     
     public Integer getId() {
@@ -25,6 +26,6 @@ public class Purchase extends BaseModel<Integer> {
     }
     @Override
     public String toString() {
-        return "Purchase [id=" + id + ", orderDate=" + orderDate + "]";
+        return "[Purchase {ID: " + id + ", OrderDate: " + orderDate + "} ";
     }
 }
