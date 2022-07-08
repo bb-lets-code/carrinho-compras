@@ -11,10 +11,10 @@ public class PersonPF extends Person {
     public String getCpf() {
         return cpf;
     }
-    public String getID(){
+    public String getIdentification(){
         return cpf;
     }
-    public void setID(String id){this.cpf = id;}
+    public void setIdentification(String id){this.cpf = id;}
     
     @Override
     public String toString() {

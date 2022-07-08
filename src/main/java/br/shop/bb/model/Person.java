@@ -18,6 +18,6 @@ public abstract class Person {
         this.address.add(address);
     }
 
-    public abstract String getID();
-    public abstract void setID(String id);
+    public abstract String getIdentification();
+    public abstract void setIdentification(String id);
 }

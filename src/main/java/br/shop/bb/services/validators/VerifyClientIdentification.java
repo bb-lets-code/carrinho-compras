@@ -13,11 +13,11 @@ public class VerifyClientIdentification implements Verify{
         Person person = client.getPerson();
 
         if(person instanceof PersonPJ){
-            if(person.getID().length() != 14){
+            if(person.getIdentification().length() != 14){
                 throw new RuntimeException("CNPJ inválido");
             }
         }if(person instanceof PersonPF){
-            if(person.getID().length() != 11){
+            if(person.getIdentification().length() != 11){
                 throw new RuntimeException("CPF inválido");
             }
         }
