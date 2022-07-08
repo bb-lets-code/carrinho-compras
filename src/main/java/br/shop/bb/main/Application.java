@@ -1,6 +1,11 @@
 package br.shop.bb.main;
 
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.util.Random;
 import java.util.Set;
+import java.util.TimeZone;
 
 import br.shop.bb.enums.Installments;
 import br.shop.bb.enums.PaymentType;
@@ -29,7 +34,8 @@ import br.shop.bb.services.order.PayOrder;
 
 public class Application {
     public static void main(String[] args) {
-        
+        int idRamdom = getRandomInRange(1, 10);
+
         System.out.println("\n\n");
         System.out.println("Inicializando aplicação");
         System.out.println("\n\n");
@@ -79,7 +85,8 @@ public class Application {
         addProduct.addProducts(cart, products.stream().findFirst().get());
         ProductRepositoryFactory factoryBaseProduct = new ProductRepositoryFactory();
         BaseRepository<Product, Integer> baseRepository = factoryBaseProduct.getBaseRepository();
-        Product productAny = baseRepository.getById(3);
+        System.out.println("Ramdom: " + idRamdom);
+        Product productAny = baseRepository.getById(idRamdom);
         addProduct.addProducts(cart, productAny);
 
 
@@ -135,10 +142,16 @@ public class Application {
         System.out.println("Data do pagamento: ");
         System.out.println(order.getPayment().getPaid());
         System.out.println("Total pago: ");
-        System.out.println(order.getPayment().getTotal());
-
-
-
-        
+        System.out.println(order.getPayment().getTotal());   
     }
+
+    public static int getRandomInRange(int start, int end){ 
+        Random r = new Random();
+        return start + r.nextInt(end - start + 1);
+
+     }
+
+
+
+
 }
