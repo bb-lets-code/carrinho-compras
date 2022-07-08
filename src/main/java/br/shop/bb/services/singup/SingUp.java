@@ -6,7 +6,7 @@ import br.shop.bb.repository.client.ClientRepositoryFactory;
 import br.shop.bb.repository.client.MemoryClientRepository;
 
 public class SingUp {
-    private BaseRepository<Client, Integer> memoryClientRepository = new MemoryClientRepository();
+    private BaseRepository<Client, Integer> memoryClientRepository = MemoryClientRepository.getInstance();
     
     ClientRepositoryFactory factoryBase = new ClientRepositoryFactory();
     public SingUp() {
