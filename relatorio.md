@@ -13,7 +13,7 @@ de cada uma delas.
 
 
 Para a adição de produtos por meio da memória foi modelado o padrão de projeto Factory Method para que o usuário possa ter opção de
-origens carregar produtos na aplicação.
+carregar produtos na aplicação de origens diferentes.
 
 Foi criado o repository que permite a manipulação dos dados (CRUD) de Client, Product e Purchase na memória.
 
