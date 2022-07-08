@@ -1,3 +1,4 @@
+
 package br.shop.bb.model;
 
 public class PersonPF extends Person {
@@ -10,10 +11,13 @@ public class PersonPF extends Person {
     public String getCpf() {
         return cpf;
     }
-
+    public String getID(){
+        return cpf;
+    }
+    public void setID(String id){this.cpf = id;}
+    
     @Override
     public String toString() {
         return "PersonPF [cpf=" + cpf + "]";
     }
-    
 } 

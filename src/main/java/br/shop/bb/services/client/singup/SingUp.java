@@ -1,5 +1,6 @@
 package br.shop.bb.services.client.singup;
 
+import br.shop.bb.clientService.VerifyClient;
 import br.shop.bb.model.Client;
 import br.shop.bb.repository.BaseRepository;
 import br.shop.bb.repository.client.ClientRepositoryFactory;
@@ -13,7 +14,9 @@ public class SingUp {
         this.memoryClientRepository = factoryBase.getBaseRepository();
     }
     public void singUp(Client client){
-        //TODO: validações em cadeia de responsabilidade
+        VerifyClient verifyClient = new VerifyClient();
+        verifyClient.verifyClient(client);
+
             if(client != null){
                 memoryClientRepository.persist(client);
                 
