@@ -9,9 +9,25 @@ public class Purchase extends BaseModel<Integer> {
     @ID
     private Integer id;
     private LocalDate orderDate;
-    
+    private Client client;
+    private Order order;
+
+
+
+    public Client getClient() {
+        return client;
+    }
+    public void setClient(Client client) {
+        this.client = client;
+    }
 
     
+    public Order getOrder() {
+        return order;
+    }
+    public void setOrder(Order order) {
+        this.order = order;
+    }
     public Integer getId() {
         return id;
     }
@@ -26,6 +42,6 @@ public class Purchase extends BaseModel<Integer> {
     }
     @Override
     public String toString() {
-        return "[Purchase {ID: " + id + ", OrderDate: " + orderDate + "} ";
+        return "Purchase [client=" + client + ", id=" + id + ", order=" + order + ", orderDate=" + orderDate + "]";
     }
 }
