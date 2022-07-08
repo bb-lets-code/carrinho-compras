@@ -11,6 +11,7 @@ public class Product extends BaseModel<Integer> {
     private Integer idProduct;
     
 
+
     private String name;
     private String description;
     private Double unitaryPrice;
@@ -79,5 +80,10 @@ public class Product extends BaseModel<Integer> {
 
     public int getId() {
         return this.idProduct;
+    }
+
+    
+    public void setId(Integer id) {
+        this.idProduct = id;
     }
 }
