@@ -1,8 +1,8 @@
 package br.shop.bb.repository.client;
 
-import java.util.ArrayList;
+
 import java.util.HashSet;
-import java.util.List;
+
 import java.util.Set;
 
 import br.shop.bb.model.Client;

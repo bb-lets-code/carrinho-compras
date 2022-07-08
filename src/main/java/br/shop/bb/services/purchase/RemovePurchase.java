@@ -8,7 +8,7 @@ public class RemovePurchase {
     private BaseRepository<Purchase, Integer> purchaseRepository;
     
     public RemovePurchase(){
-        this.purchaseRepository = new MemoryPurchaseRepository();
+        this.purchaseRepository = MemoryPurchaseRepository.getInstance();
     }
     public void removePurchase(Purchase purchase) {
         if(purchase.getId() != null) {

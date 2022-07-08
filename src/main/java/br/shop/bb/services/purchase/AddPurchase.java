@@ -8,7 +8,7 @@ public class AddPurchase {
     private BaseRepository<Purchase, Integer> purchaseRepository;
     
     public AddPurchase(){
-        this.purchaseRepository = new MemoryPurchaseRepository();
+        this.purchaseRepository = MemoryPurchaseRepository.getInstance();
     }
     public void addPurchase(Purchase purchase) {
         purchaseRepository.save(purchase);

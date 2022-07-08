@@ -9,7 +9,7 @@ public class UpdatePurchase {
     private BaseRepository<Purchase, Integer> purchaseRepository;
     
     public UpdatePurchase(){
-        this.purchaseRepository = new MemoryPurchaseRepository();
+        this.purchaseRepository = MemoryPurchaseRepository.getInstance();
     }
     public void updatePurchase(Purchase purchase) {
         if(purchase.getId() != null) {
