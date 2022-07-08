@@ -1,22 +1,28 @@
 package br.shop.bb.services;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 
 import javax.management.RuntimeErrorException;
 
 import br.shop.bb.model.Product;
 
 public class IniciarAplicacao {
+
+    final Properties prop = new Properties();
+    final String filePath = IniciarAplicacao.class.getClassLoader().getResource("config.properties").getPath();
+
     
     public void iniciarAplicacao(String... args){
         recuperarListaProdutos();
     }
 
-    private List<Product> recuperarListaProdutos(String... args) {
-        String origemDaDos =getOrigemDados(args);
+    private Set<Product> recuperarListaProdutos() {
+        String origemDaDos =getOrigemDados();
         
     }
 
@@ -25,20 +31,18 @@ public class IniciarAplicacao {
         if (args.length != 0 && !args[0].isBlank()) {
             origemDados = args[0];
           } else {
-              final Properties prop = new Properties();
-              final String filePath = IniciarAplicacao.class.getClassLoader().getResource("config.properties").getPath();
+              
               try (InputStream stream = new FileInputStream(filePath)) {
-                  prop.load(stream);
-                
+                  this.prop.load(stream);
               } catch (Exception e) {
-                  throw new Exception(e);
+                  System.out.println("Erro ao carregar arquivo de configuração");
               }
           
               origemDados = prop.getProperty("origemDadosProducts");
           }
           
           if (origemDados.isBlank()) {
-            throw new Exception("Origem de dados não informada");
+            System.out.println("Origem de dados não definida");
 
           }
           
