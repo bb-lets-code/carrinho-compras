@@ -15,6 +15,7 @@ public class UpdateQtProductCart {
     public void updateProductCart(Cart cart, Product product, int quantity){
         if(cart.getProducts().containsValue(product)){
             cart.getProducts().replace(product, quantity);
+            this.calculateEventManager.notify("calculateCartTotal", cart, product);
         } else {
             System.out.println("Não existe esse produto no carrinho");
         }

@@ -1,8 +1,15 @@
 package br.shop.bb.main;
 
+import java.util.List;
+import java.util.Set;
+
 import br.shop.bb.enums.TypeProduct;
 import br.shop.bb.model.Cart;
+import br.shop.bb.model.Client;
+import br.shop.bb.model.PersonPF;
 import br.shop.bb.model.Product;
+import br.shop.bb.repository.BaseRepository;
+import br.shop.bb.repository.client.ClientRepositoryFactory;
 import br.shop.bb.services.cart.AddProduct;
 import br.shop.bb.services.cart.RemoveProduct;
 import br.shop.bb.services.cart.ViewCart;
@@ -24,6 +31,24 @@ public class App {
         RemoveProduct removeProduct = new RemoveProduct();
         
         removeProduct.removeProductCart(cart, product1);
+        viewCart.printCart(cart);
+
+        ClientRepositoryFactory factoryBase = new ClientRepositoryFactory();
+        BaseRepository<Client, Integer> memoryClientRepository = factoryBase.getBaseRepository("MemoryClient");
+        PersonPF personPF = new PersonPF();
+        personPF.setCpf("123456789");
+        Client client = new Client();
+        client.setPerson(personPF);
+        
+        System.out.println("\n\n");
+        System.out.println("Persistindo cliente");
+        System.out.println("\n\n");
+        memoryClientRepository.save(client);
+        memoryClientRepository.save(client);
+        Set<Client> clients= memoryClientRepository.findAll();
+        System.out.println(clients);
+        
+        
 
     }
 }

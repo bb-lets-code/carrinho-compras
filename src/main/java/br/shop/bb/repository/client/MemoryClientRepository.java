@@ -1,16 +1,19 @@
-package br.shop.bb.repository;
+package br.shop.bb.repository.client;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import br.shop.bb.model.Client;
+import br.shop.bb.repository.BaseRepository;
 
 public class MemoryClientRepository implements BaseRepository<Client, Integer>  {
 
 
-    List<Client> clientList = new ArrayList<Client>();
+    Set<Client> clientList = new HashSet<Client>();
     @Override
-    public void persistir(Client entity) {
+    public void persist(Client entity) {
         int id = entity.getId();
         if(id == 0) {
             id = clientList.size() + 1;
@@ -21,34 +24,35 @@ public class MemoryClientRepository implements BaseRepository<Client, Integer>  
     }
 
     @Override
-    public Integer criarId() {
+    public Integer createID() {
         return clientList.size();
         
     }
     @Override
 
-    public void atualizar(Client entity) {
+    public void update(Client entity) {
         if(clientList.contains(entity)){
-            clientList.set(clientList.indexOf(entity), entity);
+            clientList.stream().filter(c -> c.getId() == entity.getId()).forEach(c -> c = entity);
         }        
     }
 
     @Override
     public Client getById(Integer id) {
-        return clientList.get(id);
+        return clientList.stream().filter(c -> c.getId() == id).findFirst().get();
     }
 
     @Override
-    public void listarTodos() {
-        clientList.stream().forEach(System.out::println);
+    public Set<Client> findAll() {
+        return clientList;
     }
 
     @Override
-    public void excluir(Client entity) {
+    public void delete(Client entity) {
         if(clientList.contains(entity)){
             clientList.remove(entity);
         }
     }
+
 
     
 }
