@@ -13,8 +13,10 @@ import br.shop.bb.model.Payment;
 import br.shop.bb.model.PaymentMethod;
 import br.shop.bb.model.PersonPF;
 import br.shop.bb.model.Product;
+import br.shop.bb.repository.BaseRepository;
 import br.shop.bb.repository.client.MemoryClientRepository;
 import br.shop.bb.repository.product.MemoryProductRepository;
+import br.shop.bb.repository.product.ProductRepositoryFactory;
 import br.shop.bb.services.application.InitApplication;
 import br.shop.bb.services.cart.AddProduct;
 import br.shop.bb.services.cart.RemoveProduct;
@@ -74,8 +76,11 @@ public class Application {
 
         AddProduct addProduct = new AddProduct();
         addProduct.addProducts(cart, products.stream().findFirst().get());
-        addProduct.addProducts(cart, products.stream().findAny().get());
-        addProduct.addProducts(cart, products.stream().findAny().get());
+        addProduct.addProducts(cart, products.stream().findFirst().get());
+        ProductRepositoryFactory factoryBaseProduct = new ProductRepositoryFactory();
+        BaseRepository<Product, Integer> baseRepository = factoryBaseProduct.getBaseRepository();
+        Product productAny = baseRepository.getById(3);
+        addProduct.addProducts(cart, productAny);
 
 
 
