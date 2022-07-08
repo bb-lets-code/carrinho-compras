@@ -8,6 +8,7 @@ Para as funcionalidades do carrinho foram utilizados alguns padrões de projeto,
 
 * Observer - todas as vezes que for adicionado ou removido ou atualizado um produto no carrinho, o service de recalcular o total é notificado. 
 * Singleton - para as classes de calcular taxas, frete e promoção.
+* Factory - para a configurar o database escolhido no arquivo config.propeties
 * 1º príncipio SOLID (Single responsibility principle) - Para todas as classes de calcular taxas, frete e promoção. Dessa forma, separa as responsabilidades
 de cada uma delas.
 
