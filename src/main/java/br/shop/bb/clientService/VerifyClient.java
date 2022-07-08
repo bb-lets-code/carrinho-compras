@@ -10,8 +10,7 @@ import br.shop.bb.services.validators.VerifyClientIdentification;
 
 public class VerifyClient {
 
-    public static boolean verifyClient(Client client) {
-
+    public void verifyClient(Client client) {
         try {
             List<Verify> validations = List.of(
                     new VerifyClientIdentification());
@@ -19,10 +18,8 @@ public class VerifyClient {
             for (Verify validation : validations) {
                 validation.verify(client);
             }
-        } catch (Exception e) {
-            System.out.println("Erro! Verifique os dados identificados");
-            return false;
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
         }
-        return true;
     }
 }
