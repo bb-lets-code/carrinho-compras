@@ -17,4 +17,4 @@ carregar produtos na aplicação de origens diferentes.
 
 Foi criado o repository que permite a manipulação dos dados (CRUD) de Client, Product e Purchase na memória.
 
-Para a criação da Order foram utilizados os padrões de projeto Builder e Template Method, a fim de que tenha uma ordem para na sua criação.
+Para a criação da Order foram utilizados os padrões de projeto Builder e Template Method, com o objetivo de garantir que a Order será criada com uma ordem estabelecida.
