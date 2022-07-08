@@ -18,3 +18,5 @@ carregar produtos na aplicação de origens diferentes utilizando o arquivo conf
 Foi criado o repository que permite a manipulação dos dados (CRUD) de Client, Product e Purchase na memória.
 
 Para a criação da Order foram utilizados os padrões de projeto Builder e Template Method, com o objetivo de garantir que a Order será criada com uma ordem estabelecida.
+
+Além disso, criou-se um verificador de dados para os clientes que segue o padrão Chain of Responsability. No momento, apenas é verificado se o CPF e CNPJ possuem o número correto de dígitos, mas caso sejam necessárias outras verificações elas podem ser facilmente adicionadas. Nesse caso, cada validação é aplicada ao cliente, uma de cada vez.
