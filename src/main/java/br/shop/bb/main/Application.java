@@ -15,7 +15,7 @@ import br.shop.bb.model.PersonPF;
 import br.shop.bb.model.Product;
 import br.shop.bb.repository.client.MemoryClientRepository;
 import br.shop.bb.repository.product.MemoryProductRepository;
-import br.shop.bb.services.InitApplication;
+import br.shop.bb.services.application.InitApplication;
 import br.shop.bb.services.cart.AddProduct;
 import br.shop.bb.services.cart.RemoveProduct;
 import br.shop.bb.services.cart.ViewCart;
@@ -42,9 +42,10 @@ public class Application {
     public static void main(String[] args) {
         
         System.out.println("\n\n");
-        System.out.println("Aplication");
-
         System.out.println("Inicializando aplicação");
+        System.out.println("\n\n");
+        
+
         InitApplication.init();
 
         System.out.println("\n\n");
